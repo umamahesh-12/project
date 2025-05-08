@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Play Dice - codingspace <title>
-    </title> 
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dice Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dice">
-<h2 class="dice-title"></h2>Dice Game using HTML, CSS & Javascript</h2> <div class="row">
-<div class="col-6">
-    <h3>Player 1</h3>
-<img src="img/Dice-1.png" alt="dice" class="img-dice">
-<div class="col-6">
-    <h3>Player </h3>
-<img src="img/Dice-1.png" alt="dice" class="DICE">
-</div>
-</div>
-<h1 class="head"</h1></h1>
-    <button id="dice-btn" onclick="dicegame()"></button>Start
-</div>
-<script src="game.js"></script>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">🎲 Dice Game</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#howtoplay">How to Play</a></li>
+      <li><a href="#winners">Past Winners</a></li>
+      <li><a href="#" onclick="openAbout()">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <h1>Dice Game</h1>
+    <div class="dice-container">
+      <div class="player">
+        <h2>Player 1</h2>
+        <img id="dice1" class="dice" src="Dice-1.png" alt="Player 1 Dice">
+      </div>
+      <div class="player">
+        <h2>Player 2</h2>
+        <img id="dice2" class="dice" src="Dice-1.png" alt="Player 2 Dice">
+      </div>
+    </div>
+    <h2 id="result">Click "Roll Dice" to play</h2>
+    <button onclick="rollDice()">Roll Dice</button>
+  </section>
+
+  <!-- How to Play Section -->
+  <section id="howtoplay" class="section">
+    <h2>How to Play</h2>
+    <ol>
+      <li>Click the <strong>Roll Dice</strong> button.</li>
+      <li>Two dice roll — one for each player.</li>
+      <li>The higher roll wins!</li>
+      <li>The result appears and is saved in Past Winners.</li>
+    </ol>
+  </section>
+
+  <!-- Past Winners Section -->
+  <section id="winners" class="section">
+    <h2>Past Winners</h2>
+    <ul id="winner-history"></ul>
+    <button onclick="resetWinners()">Reset History</button>
+  </section>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAbout()">&times;</span>
+      <h2>About</h2>
+      <p>This is a fun 2-player dice game made with HTML, CSS, and JavaScript.</p>
+      <p>Click "Roll Dice" to play. The winner is recorded and shown in the history.</p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
 </body>
 </html>
